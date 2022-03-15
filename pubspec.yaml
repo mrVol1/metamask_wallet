@@ -1,0 +1,49 @@
+name: metamask_app
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+     - assets/images/MM_Roundel.png
+     - assets/images/account_connected.png
+     - assets/images/network_select_white.png
+     - assets/images/hamburger.png
+     - assets/images/ETH_icon.png
+     - assets/images/DATA_icon.png
+     - assets/images/add_token.png
+     - assets/images/network_select_white_opasity.png
+     - assets/images/x_close_grey.png
+     - assets/images/selected_tick.png
+     - assets/images/acc_connected.png
+
+  fonts:
+    - family: SF_Bold
+      fonts:
+        - asset: assets/fonts/SFUIDisplay-Bold.ttf
+    - family: SF_Medium
+      fonts:
+        - asset: assets/fonts/SFUIText-Medium.ttf
+    - family: SF_Regular
+      fonts:
+        - asset: assets/fonts/SFUIDisplay-Regular.ttf
+
+
+        
