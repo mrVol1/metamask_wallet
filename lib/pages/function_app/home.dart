@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metamask_app/consts/colors.dart';
-import 'package:metamask_app/pages/user.dart';
+import 'package:metamask_app/pages/function_app/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

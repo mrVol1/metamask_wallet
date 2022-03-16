@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:metamask_app/consts/colors.dart';
-import 'package:metamask_app/pages/home.dart';
+import 'package:metamask_app/pages/register/register_form.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+class WelcomeRegisterOrLoginScreen extends StatefulWidget {
+  const WelcomeRegisterOrLoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
+  State<WelcomeRegisterOrLoginScreen> createState() =>
+      _WelcomeRegisterOrLoginScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeRegisterOrLoginScreenState
+    extends State<WelcomeRegisterOrLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             const SizedBox(
               height: 114.0,
             ),
-            _loginButton(),
+            _createNewWalletButton(),
+            const SizedBox(
+              height: 14.0,
+            ),
+            _recoveryWalletButton(),
           ],
         ),
       ),
@@ -53,9 +59,42 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 
-  Widget _loginButton() {
+  Widget _createNewWalletButton() {
     return SizedBox(
-      width: 164.0,
+      width: 248.0,
+      height: 40.0,
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            ColorsConst.colorTextBold,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          Route route =
+              MaterialPageRoute(builder: (context) => const RegisterForm());
+          Navigator.push(context, route);
+        },
+        child: const Text(
+          'Create a new wallet',
+          style: TextStyle(
+            fontFamily: 'SF_Medium',
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _recoveryWalletButton() {
+    return SizedBox(
+      width: 248.0,
       height: 40.0,
       child: TextButton(
         style: ButtonStyle(
@@ -66,13 +105,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
           ),
         ),
-        onPressed: () {
-          Route route =
-              MaterialPageRoute(builder: (context) => const HomeScreen());
-          Navigator.push(context, route);
-        },
+        onPressed: () {},
         child: Text(
-          'Accounts & Connect',
+          'Recovery Wallet',
           style: TextStyle(
             fontFamily: 'SF_Medium',
             color: ColorsConst.colorTextMedium,
